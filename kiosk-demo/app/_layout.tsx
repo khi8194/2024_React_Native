@@ -33,6 +33,7 @@ export default function RootLayout() {
         <Stack.Screen name="category" options={{ headerShown: false }}/>
         <Stack.Screen name="single" options={{ headerShown: false }}/>
         <Stack.Screen name="set-menu" options={{ headerShown: false }}/>
+        <Stack.Screen name="details/[vid]" options={{ headerShown: false }}/>
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

@@ -1,5 +1,5 @@
 import { ListItemType } from "@/types";
-import { router } from "expo-router";
+import { Link, router } from "expo-router";
 import { FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 // type 
@@ -9,13 +9,13 @@ const LIST: ListItemType[] = [
     key:'1955',
     name: '1955버거',
     // link: 'burger-1955'
-    vid: 'burger-1955'
+    vid: 'gzFEg2z5Sso'
   },
   {
     key:'bid-mc',
     name: '빅맥',
     // link: 'bid-mc'
-    vid: 'big-mc',
+    vid: 'm7G6fDMvUY8',
   },
 ]
 
@@ -28,10 +28,13 @@ export default function Page() {
       />
 
       <View style={{ padding: 12, flexDirection: 'row', gap: 12 }}>
-        <TouchableOpacity style={[styles.button, { marginBottom: 0, flex: 1 }]} onPress={()=>{router.push('/category')}}>
+        
+        <TouchableOpacity style={[styles.button, { marginBottom: 0, flex: 1 }]} 
+          onPress={()=>{router.push('/category')}}>
             <Text style={styles.label}>🔙 이전 메뉴</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, { marginBottom: 0, flex: 1 }]} onPress={()=>{router.push('/')}}>
+        <TouchableOpacity style={[styles.button, { marginBottom: 0, flex: 1 }]} 
+          onPress={()=>{router.push('/')}}>
             <Text style={styles.label}>🏠 처음으로</Text>
         </TouchableOpacity>
       </View>
@@ -47,7 +50,9 @@ export default function Page() {
 // }*/
 function Item({ item }: { item: ListItemType } ) {
   return <View>
-      <Text>{item.name}</Text>
+      <Link href = { `/details/${item.vid}` }>
+        <Text>{item.name}</Text>
+      </Link>
   </View>
 }
 

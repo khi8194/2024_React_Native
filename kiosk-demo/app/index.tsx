@@ -35,10 +35,10 @@ export default function Page() {
     ,justifyContent:'center'
     ,alignItems:'center'
   }}>
+
     <TouchableOpacity onPress={()=>{
       //dynamic navigate, programable navigate
-      router.push('/category')
-    }}style={{ width: '100%' }}>
+      router.push('/category')}} style={{ width: '100%' }}>
       <View style={{
         width:'100%', height:'100%'
         , justifyContent:'center', alignItems:'center'
